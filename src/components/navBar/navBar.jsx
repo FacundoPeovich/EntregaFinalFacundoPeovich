@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from '../cartWidget/cartWidget';
 import styles from './styles.module.css'
+import NavDropdown from 'react-bootstrap/NavDropdown'
 
 
 const NavBar = () => {
@@ -17,7 +18,11 @@ const NavBar = () => {
                         <Navbar.Brand href="#home">FP Informatica</Navbar.Brand>
                         <Nav className="me-auto">
                             <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#products">Productos</Nav.Link>
+                            <NavDropdown title="Productos" id="basic-nav-dropdown">
+                            <NavDropdown.Item href="#categoria1">Categoría 1</NavDropdown.Item>
+                            <NavDropdown.Item href="#categoria2">Categoría 2</NavDropdown.Item>
+                            <NavDropdown.Item href="#categoria3">Categoría 3</NavDropdown.Item>
+                        </NavDropdown>
                             <Nav.Link href="#contact" >Contacto</Nav.Link>
                         </Nav>
                     </Container>

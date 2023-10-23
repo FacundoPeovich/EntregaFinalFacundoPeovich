@@ -3,3 +3,11 @@
     margin-left: 45%;
     margin-top: 50px;
 }
+
+.center-spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 45%;
+}

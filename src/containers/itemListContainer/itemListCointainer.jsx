@@ -1,12 +1,46 @@
+import { useEffect, useState } from 'react'
 import styles from './styles.module.css'
-
-
+import Item from '../../components/Item/Item'
+import React from 'react'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Spinner from 'react-bootstrap/Spinner'
 
 const ItemListContainer = ({ greeting }) => {
+
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+
+        fetch('https://fakestoreapi.com/products?limit=9')
+            .then(res => res.json())
+            .then(json => {
+                setProducts(json)
+            })
+            .catch(error => console.error(error))
+    }, [])
+
     return (
-        <>
+
+        <Container>
             <h2 className={styles.saludo}>{greeting}</h2>
-        </>
+            <Row>
+                {products.length > 0 ? (
+                    products.map((prod, index) => (
+                        <div className="col-12 col-md-6 col-lg-4">
+                            <Item producto={prod} key={index} />
+                        </div>
+                    ))
+                ) : (
+                    <div className="center-spinner-container">
+                        <Spinner animation="border" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </Spinner>
+                    </div>
+                )}
+            </Row>
+        </Container>
+
     )
 }
 
