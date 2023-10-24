@@ -54,7 +54,7 @@ const ItemDetailContainer = () => {
                         </>
 
                     ) : (
-                        <p>El producto con id:{id} no existe</p>
+                        <p>El producto con id:{id} no está disponible</p>
                     )}
                 </>
 
