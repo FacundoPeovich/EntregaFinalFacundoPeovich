@@ -38,8 +38,8 @@ const ItemListContainer = ({ greeting }) => {
                         </div>
                     ))
                 ) : (
-                    <div className="center-spinner-container">
-                        <Spinner animation="border" role="status">
+                    <div>
+                        <Spinner className="center-spinner-container" animation="border" role="status">
                             <span className="visually-hidden">Loading...</span>
                         </Spinner>
                     </div>

@@ -1,10 +1,10 @@
-import NavBar from './components/navBar/navBar'
+import NavBar from './components/NavBar/navBar'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ItemListContainer from './containers/itemListContainer/itemListCointainer'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NotFound from './components/NotFound/NotFound'
-import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer'
+import ItemDetailContainer from './containers/itemDetailContainer/ItemDetailContainer'
 import Footer from './components/Footer/Footer'
 
 
