@@ -40,7 +40,7 @@ const ItemListContainer = ({ greeting }) => {
                 ) : (
                     <div>
                         <Spinner className="center-spinner-container" animation="border" role="status">
-                            <span className="visually-hidden">Loading...</span>
+                            <span className="visually-hidden">Loading..</span>
                         </Spinner>
                     </div>
                 )}
