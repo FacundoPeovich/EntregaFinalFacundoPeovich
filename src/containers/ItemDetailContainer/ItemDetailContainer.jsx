@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Spinner from 'react-bootstrap/Spinner'
-import "./ItemDetailContainer.css"
+import "./itemDetailContainer.css"
 
 
 
