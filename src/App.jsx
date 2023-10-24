@@ -4,7 +4,7 @@ import ItemListContainer from './containers/itemListContainer/itemListCointainer
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NotFound from './components/NotFound/NotFound'
-import ItemDetailContainer from './containers/itemDetailContainer/ItemDetailContainer'
+import ItemDetailContainer from './containers/itemDetailContainer/itemDetailContainer'
 import Footer from './components/Footer/Footer'
 
 
