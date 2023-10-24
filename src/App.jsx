@@ -1,4 +1,4 @@
-import NavBar from './components/NavBar/navBar'
+import NavBar from './components/navBar/navBar'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ItemListContainer from './containers/itemListContainer/itemListCointainer'
 import './App.css'
