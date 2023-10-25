@@ -6,7 +6,7 @@ import CartWidget from '../CartWidget/cartWidget';
 import styles from './styles.module.css'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import { Link, NavLink } from 'react-router-dom';
-import logofp from "../../assets/logofp.png" 
+import logofp from "../../assets/logofp.png"
 
 const NavBar = () => {
 
@@ -16,17 +16,17 @@ const NavBar = () => {
             <div>
                 <Navbar bg="dark" data-bs-theme="dark" className={styles.navbar}>
                     <Container>
-                        <Navbar.Brand href="#home">
+                        <Navbar.Brand>
                             <Link to={`/`}>
-                            <img src={logofp} alt="Logo" width="40" height="40" /> 
+                                <img src={logofp} alt="Logo" width="40" height="40" />
                             </Link>
                         </Navbar.Brand>
                         <Nav className="me-auto">
                             <NavDropdown title="Productos" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#jewelery"><NavLink to={`./category/jewelery`}>Jewelery</NavLink></NavDropdown.Item>
-                                <NavDropdown.Item href="#electronics"><NavLink to={`./category/electronics`}>Electronics</NavLink></NavDropdown.Item>
-                                <NavDropdown.Item href="#mensclothing"><NavLink to={`/category/men's%20clothing`}>Men's Clothing</NavLink></NavDropdown.Item>
-                                <NavDropdown.Item href="#womensclothing"><NavLink to={`./category/women's%20clothing`}>Women's Clothing</NavLink></NavDropdown.Item>
+                                <NavDropdown.Item><NavLink to={`./category/jewelery`}>Jewelery</NavLink></NavDropdown.Item>
+                                <NavDropdown.Item><NavLink to={`./category/electronics`}>Electronics</NavLink></NavDropdown.Item>
+                                <NavDropdown.Item><NavLink to={`/category/men's%20clothing`}>Men's Clothing</NavLink></NavDropdown.Item>
+                                <NavDropdown.Item><NavLink to={`./category/women's%20clothing`}>Women's Clothing</NavLink></NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link href="#contact" >Contacto</Nav.Link>
                         </Nav>
