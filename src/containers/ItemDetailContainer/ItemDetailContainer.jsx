@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Spinner from 'react-bootstrap/Spinner'
 import "./itemDetailContainer.css"
+import ItemDetail from "../ItemDetail/itemDetail"
 
 
 
@@ -40,17 +41,7 @@ const ItemDetailContainer = () => {
                 <>
                     {producto ? (
                         <>
-                            <div className="detail-container">
-                                <h2>Producto: {producto?.title}</h2>
-                                <div >
-                                    <img className="product-image" src={producto?.image} alt="" />
-                                </div>
-                                <div className="product-description">
-                                    <p>{producto?.description}</p>
-                                </div>
-                                <p>$ {producto?.price}</p>
-                                <button className='card-button'>Añadir al carrito</button>
-                            </div>
+                           <ItemDetail producto={producto} />
                         </>
 
                     ) : (
