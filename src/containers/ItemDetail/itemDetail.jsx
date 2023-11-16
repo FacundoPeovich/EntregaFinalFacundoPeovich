@@ -31,6 +31,7 @@ const ItemDetail = ({ producto }) => {
                 <p>{producto?.description}</p>
             </div>
             <p>$ {producto?.price}</p>
+            <p>Stock {producto?.stock}</p>
 
             <ItemCount quantity={quantity} sumar={sumar} restar={restar} addToCart={handleAddToCart} />
 

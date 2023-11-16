@@ -1,6 +1,6 @@
 import NavBar from './components/NavBar/navBar'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import ItemListContainer from './containers/itemListContainer/itemListCointainer'
+import ItemListContainer from './containers/ItemListContainer/itemListCointainer'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NotFound from './components/NotFound/NotFound'

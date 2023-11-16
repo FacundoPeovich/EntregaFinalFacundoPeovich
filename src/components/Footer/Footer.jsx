@@ -5,8 +5,8 @@ function Footer() {
     return (
         <footer className="footer">
             <div className="footer-content">
-                <p>&copy; 2023 FP Electrónica</p>
-                <p>Contacto: info@fpelectronica.com.ar</p>
+                <p>&copy; 2023 FP Clothes</p>
+                <p>Contacto: info@fpclothes.com.ar</p>
             </div>
         </footer>
     );

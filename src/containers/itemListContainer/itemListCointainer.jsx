@@ -6,25 +6,38 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Spinner from 'react-bootstrap/Spinner'
 import { useParams } from 'react-router-dom'
+import { db } from '../../Firebase/client'
+import { collection, getDocs, query, where, } from 'firebase/firestore'
 
 const ItemListContainer = ({ greeting }) => {
 
     const [products, setProducts] = useState([])
-    const {nombreCategoria} = useParams()
+    const { nombreCategoria } = useParams()
 
 
     useEffect(() => {
+        const fetchProductos = async () => {
+            try {
+                const productsRef = collection(db, "products");
 
-        const url = nombreCategoria ? `https://fakestoreapi.com/products/category/${nombreCategoria}` : `https://fakestoreapi.com/products`
+                const q = nombreCategoria ? query(productsRef, where("categoryld", "==", nombreCategoria)) : productsRef;
 
-        fetch(url)
-            .then(res => res.json())
-            .then(json => {
-                setProducts(json)
-            })
-            .catch(error => console.error(error))
-            console.log(nombreCategoria)
-    }, [nombreCategoria])
+                const productosSnapshot = await getDocs(q);
+
+                setProducts(
+                    productosSnapshot.docs.map((doc) => ({
+                        id: doc.id,
+                        ...doc.data(),
+                    }))
+                );
+
+            } catch (error) {
+                console.error("Error fetching products: ", error);
+            }
+        };
+
+        fetchProductos();
+    }, [nombreCategoria]);
 
     return (
 
@@ -32,9 +45,9 @@ const ItemListContainer = ({ greeting }) => {
             <h2 className={styles.saludo}>{greeting}</h2>
             <Row>
                 {products.length > 0 ? (
-                    products.map((prod, index) => (
+                    products.map((prod, id) => (
                         <div className="col-12 col-md-6 col-lg-4">
-                            <Item producto={prod} key={index} />
+                            <Item producto={prod} key={id} />
                         </div>
                     ))
                 ) : (
