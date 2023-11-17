@@ -20,7 +20,7 @@ const ItemListContainer = ({ greeting }) => {
             try {
                 const productsRef = collection(db, "products");
 
-                const q = categoryId ? query(productsRef, where("categoryld", "==", categoryId)) : productsRef;
+                const q = categoryId ? query(productsRef, where("categoryId", "==", categoryId)) : productsRef;
 
                 const productosSnapshot = await getDocs(q);
 
@@ -46,8 +46,8 @@ const ItemListContainer = ({ greeting }) => {
             <Row>
                 {products.length > 0 ? (
                     products.map((prod, id) => (
-                        <div className="col-12 col-md-6 col-lg-4">
-                            <Item producto={prod} key={id} />
+                        <div className="col-12 col-md-6 col-lg-4" key={prod.id}>
+                            <Item producto={prod} />
                         </div>
                     ))
                 ) : (

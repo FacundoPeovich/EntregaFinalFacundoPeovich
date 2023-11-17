@@ -9,8 +9,6 @@ import { Link, NavLink } from 'react-router-dom';
 import logofp from "../../assets/logofp.png"
 
 const NavBar = () => {
-
-
     return (
         <>
             <div>
@@ -23,21 +21,16 @@ const NavBar = () => {
                         </Navbar.Brand>
                         <Nav className="me-auto">
                             <NavDropdown title="Productos" id="basic-nav-dropdown">
-                                <NavDropdown.Item><NavLink to={`./category/pantalones`}>Pantalones</NavLink></NavDropdown.Item>
-                                <NavDropdown.Item><NavLink to={`./category/remeras`}>Remeras</NavLink></NavDropdown.Item>
-                                <NavDropdown.Item><NavLink to={`/category/camperas`}>Camperas</NavLink></NavDropdown.Item>
-                                
+                                <NavDropdown.Item as={NavLink} to={`/category/pantalones`}>Pantalones</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to={`/category/remeras`}>Remeras</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to={`/category/camperas`}>Camperas</NavDropdown.Item>
                             </NavDropdown>
-                            <Nav.Link href="#contact" >Contacto</Nav.Link>
+                            <Nav.Link as={NavLink} to="#contact">Contacto</Nav.Link>
                         </Nav>
                     </Container>
                     <CartWidget />
                 </Navbar>
-
             </div>
-
-
-
         </>
     )
 }
