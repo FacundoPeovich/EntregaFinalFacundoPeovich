@@ -8,7 +8,7 @@ const Cart = () => {
 
     return (
         <div className="d-flex flex-column align-items-center justify-content-center">
-            <h2>Carrito de compras</h2>
+            <h2>Cart</h2>
 
             {cart.length > 0 ? (
                 <>
@@ -28,7 +28,7 @@ const Cart = () => {
                     ))}
 
                     <div>
-                        <p>Total: ${totalPrice()}</p>
+                        <p className="text-center"><strong>Total: ${totalPrice()}</strong></p>
                         <Button variant="primary" onClick={emptyCart}>
                             Vaciar carrito
                         </Button>
