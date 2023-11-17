@@ -16,7 +16,7 @@ const CheckOut = () => {
 
     const handleCheckout = async () => {
         try {
-            // Validación del formulario
+            
             if (!buyerInfo.name || !buyerInfo.phone || !buyerInfo.email) {
                 throw new Error('Por favor, completa todos los campos del formulario.');
             }
