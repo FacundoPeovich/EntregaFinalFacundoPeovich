@@ -12,7 +12,7 @@ import { collection, getDocs, query, where, } from 'firebase/firestore'
 const ItemListContainer = ({ greeting }) => {
 
     const [products, setProducts] = useState([])
-    const { nombreCategoria } = useParams()
+    const { categoryId } = useParams()
 
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const ItemListContainer = ({ greeting }) => {
             try {
                 const productsRef = collection(db, "products");
 
-                const q = nombreCategoria ? query(productsRef, where("categoryld", "==", nombreCategoria)) : productsRef;
+                const q = categoryId ? query(productsRef, where("categoryld", "==", categoryId)) : productsRef;
 
                 const productosSnapshot = await getDocs(q);
 
@@ -37,7 +37,7 @@ const ItemListContainer = ({ greeting }) => {
         };
 
         fetchProductos();
-    }, [nombreCategoria]);
+    }, [categoryId]);
 
     return (
 

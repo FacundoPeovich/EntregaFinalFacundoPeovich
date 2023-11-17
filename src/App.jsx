@@ -6,7 +6,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NotFound from './components/NotFound/NotFound'
 import ItemDetailContainer from './containers/itemDetailContainer/itemDetailContainer'
 import Footer from './components/Footer/Footer'
-import { CartProvider } from './Context/cartContext'
+import { CartProvider } from './context/cartContext'
+import Cart from './components/Cart/Cart'
+import CheckOut from './components/CheckOut/CheckOut'
+
 
 
 
@@ -21,9 +24,11 @@ function App() {
           <NavBar />
           <Routes>
             <Route exact path='/' element={<ItemListContainer greeting="Hola, bienvenido a mi página" />} />
-            <Route exact path="/category/:nombreCategoria" element={<ItemListContainer />} />
+            <Route exact path="/category/:categoryId" element={<ItemListContainer />} />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
-            <Route path='*' element={<NotFound />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<CheckOut />} />
+            <Route path='*' element={<NotFound />} />   
           </Routes>
           <Footer />
         </BrowserRouter>

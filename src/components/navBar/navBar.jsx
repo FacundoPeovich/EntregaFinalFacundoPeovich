@@ -23,9 +23,9 @@ const NavBar = () => {
                         </Navbar.Brand>
                         <Nav className="me-auto">
                             <NavDropdown title="Productos" id="basic-nav-dropdown">
-                                <NavDropdown.Item><NavLink to={`./category/jewelery`}>Pantalones</NavLink></NavDropdown.Item>
-                                <NavDropdown.Item><NavLink to={`./category/electronics`}>Remeras</NavLink></NavDropdown.Item>
-                                <NavDropdown.Item><NavLink to={`/category/men's%20clothing`}>Camperas</NavLink></NavDropdown.Item>
+                                <NavDropdown.Item><NavLink to={`./category/pantalones`}>Pantalones</NavLink></NavDropdown.Item>
+                                <NavDropdown.Item><NavLink to={`./category/remeras`}>Remeras</NavLink></NavDropdown.Item>
+                                <NavDropdown.Item><NavLink to={`/category/camperas`}>Camperas</NavLink></NavDropdown.Item>
                                 
                             </NavDropdown>
                             <Nav.Link href="#contact" >Contacto</Nav.Link>
